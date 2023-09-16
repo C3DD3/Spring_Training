@@ -1,4 +1,4 @@
-package com.example.RestProject.model;
+package com.example.restProject.model;
 
 public class ApiResultModel {
     private String resultCode;

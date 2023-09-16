@@ -1,4 +1,4 @@
-package com.example.RestProject;
+package com.example.restProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

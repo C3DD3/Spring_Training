@@ -1,15 +1,13 @@
-package com.example.RestProject.model;
+package com.example.restProject.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import java.security.PrivateKey;
+import java.security.Timestamp;
 import java.util.Date;
 
 @Entity //varlık classı olduğunu belirtir
@@ -27,18 +25,16 @@ public class PhoneNumber {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    private boolean isActive;
-
     @Column(name = "status")
-    private String status; //available and locked
+    @Enumerated(EnumType.STRING)
+    private PhoneNumberStatus status ;
 
     @Column(name = "create_date")
-    @CreationTimestamp    //@CreatedDate JPA repository de düzgün çalışmadı bunu kullandım
+    @CreatedDate //JPA repository de düzgün çalışmadı bunu kullandım //@CreationTimestamp
     private Date createDate;
 
     @Column(name = "update_date")
     @UpdateTimestamp
-
     private Date updateDate;
 
     //LocalDateTime Bilgisayarın zaman dilimini baz alır buralarda çalışan doğru annotation //@LastModifiedDate

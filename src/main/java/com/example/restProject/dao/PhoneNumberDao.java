@@ -1,7 +1,8 @@
-package com.example.RestProject.dao;
+package com.example.restProject.dao;
 
 
-import com.example.RestProject.model.PhoneNumber;
+import com.example.restProject.model.PhoneNumber;
+import com.example.restProject.model.PhoneNumberStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +13,5 @@ import java.util.Optional;
 public interface PhoneNumberDao extends JpaRepository<PhoneNumber,Integer>{
 
     Optional<PhoneNumber> findByPhoneNumber(String phoneNumber);
-    Optional<List<PhoneNumber>> findAllByIsActive(boolean isActive);
+    Optional<List<PhoneNumber>> findAllByStatus(PhoneNumberStatus status);
 }
